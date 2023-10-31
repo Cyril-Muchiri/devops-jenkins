@@ -1,42 +1,23 @@
 pipeline {
     agent any
-    
     stages {
         stage('Checkout') {
             steps {
-                script {
-                    checkout scm
-                }
+                checkout scm
             }
         }
-        
+
         stage('Build') {
             steps {
-                script {
-                    
-                }
+                sh 'python3 -m venv chief'
+                sh '. venv/bin/activate && pip install --upgrade pip && pip install -r requirements.txt'
             }
         }
-        
+
         stage('Test') {
             steps {
-                script {
-                }
+                sh '. venv/bin/activate && pytest'
             }
-        }
-    }
-    
-    post {
-        always {
-            junit 'target/surefire-reports/**/*.xml'
-        }
-        
-        success {
-            echo 'Build and tests passed!'
-        }
-        
-        failure {
-            echo 'Build or tests failed!'
         }
     }
 }
