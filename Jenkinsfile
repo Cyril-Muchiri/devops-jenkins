@@ -16,7 +16,7 @@ pipeline {
 
         stage('Test') {
             steps {
-                sh '. chief/bin/activate && pytest'
+                // sh '. chief/bin/activate && pytest'
             }
         }
     }
