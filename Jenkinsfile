@@ -4,8 +4,8 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                // This step checks out your source code from your version control system (e.g., Git)
                 script {
+                    // This step checks out your source code from your version control system (e.g., Git)
                     checkout scm
                 }
             }
@@ -13,9 +13,9 @@ pipeline {
         
         stage('Build') {
             steps {
-                // This step executes the build process
                 script {
-                    sh 'mvn clean package' // Example for Maven build
+                    // This step executes the build process
+                    sh 'mvn clean package' // Maven build
                 }
             }
         }
@@ -23,28 +23,27 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    sh 'mvn test' // Example for Maven test
-                }
-            }
-        }
-        
-        stage('Deploy') {
-            when {
-                expression { currentBuild.resultIsBetterOrEqualTo('SUCCESS') }
-            }
-            steps {
-                script {
-                    sh 'kubectl apply -f deployment.yaml' // Example for Kubernetes deployment
+                    // This step executes your tests
+                    sh 'mvn test' // Maven test
                 }
             }
         }
     }
     
     post {
+        always {
+            // This block is executed after all stages, regardless of success or failure
+            junit 'target/surefire-reports/**/*.xml' // Publish JUnit test results
+        }
+        
+        success {
+            // This block is executed if all stages are successful
+            echo 'Build and tests passed!'
+        }
+        
         failure {
-            mail to: 'cyrilmuchiri11@gmail.com',
-                 subject: 'Failed Pipeline: ${currentBuild.fullDisplayName}',
-                 body: "Something is wrong with ${env.JOB_NAME} build ${env.BUILD_NUMBER}"
+            // This block is executed if any of the stages fail
+            echo 'Build or tests failed!'
         }
     }
 }
