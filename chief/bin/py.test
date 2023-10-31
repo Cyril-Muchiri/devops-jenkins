@@ -1,5 +1,5 @@
 #!/bin/sh
-'''exec' "/media/chief/New Volume/systech Material/devops_assesment/chief/bin/python3" "$0" "$@"
+'''exec' "/media/chief/New Volume1/systech Material/devops-jenkins/chief/bin/python3" "$0" "$@"
 ' '''
 # -*- coding: utf-8 -*-
 import re

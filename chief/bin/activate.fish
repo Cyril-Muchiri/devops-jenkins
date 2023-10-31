@@ -33,7 +33,7 @@ end
 # Unset irrelevant variables.
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/media/chief/New Volume/systech Material/devops_assesment/chief"
+set -gx VIRTUAL_ENV "/media/chief/New Volume1/systech Material/devops-jenkins/chief"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH

@@ -38,7 +38,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/media/chief/New Volume/systech Material/devops_assesment/chief"
+VIRTUAL_ENV="/media/chief/New Volume1/systech Material/devops-jenkins/chief"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"
