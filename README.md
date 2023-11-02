@@ -12,7 +12,4 @@
 * verify the origin has been set succesfully using ``` git remote -v ```
 * create a new branch main and checkout using ``` git checkout -b main```
 * using ``` git pull origin main ``` pull the code from remote repo(main branch) to local main branch
-* THIS METHOD IS A LONG METHOD BUT ITS EXPRESSIVE, IVE USED THIS METHOD BECAUSE I WANT TO HAVE TOTAL CONTROL ON HOW MY PROJECT IS SET UP   
-* to be removed
-* right now
-* 
+* THIS METHOD IS A LONG METHOD BUT ITS EXPRESSIVE, IVE USED THIS METHOD BECAUSE I WANT TO HAVE TOTAL CONTROL ON HOW MY PROJECT IS SET UP    
