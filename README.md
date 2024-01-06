@@ -1,5 +1,5 @@
 # devops_assesment
-## STEP 1:CREATING A REPO 
+### STEP 1:CREATING A REPO 
 * Navigate to a target folder and create a folder with a project name(devops_assesment)
 * using ```cd devops_assesmnt ``` browse into the directory
 * using ``` git init ``` initialize a git repository
